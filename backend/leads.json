@@ -48,5 +48,15 @@
     "team_size": "15",
     "timeline": "soon",
     "source": "voice_agent"
+  },
+  {
+    "name": "Shubham",
+    "company": "TechFlow",
+    "email": "shubhamtohoku123@gmail.com",
+    "role": "CTO",
+    "use_case": "Automating customer support",
+    "team_size": "15",
+    "timeline": "Soon",
+    "source": "voice_agent"
   }
 ]

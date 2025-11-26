@@ -1,43 +1,43 @@
 {
-  "company": "Nexyor",
-  "product_overview": "Nexyor builds advanced AI automation systems including AI Voice Agents, workflow automation, lead qualification bots, customer support agents, and multi-channel conversational AI. Their goal is to help businesses automate repetitive tasks using AI-driven voice and chat interfaces.",
-  "pricing": "Nexyor follows a custom pricing model depending on conversation volume, integrations, and deployment needs. Basic automation packages start at an affordable monthly subscription, while enterprise conversational AI agents are billed according to usage and customization.",
+  "company": "dummyAI",
+  "product_overview": "dummyAI builds advanced AI automation systems including AI Voice Agents, workflow automation, lead qualification bots, customer support agents, and multi-channel conversational AI. Their goal is to help businesses automate repetitive tasks using AI-driven voice and chat interfaces.",
+  "pricing": "dummyAI follows a custom pricing model depending on conversation volume, integrations, and deployment needs. Basic automation packages start at an affordable monthly subscription, while enterprise conversational AI agents are billed according to usage and customization.",
   "faq": [
     {
-      "q": "What does Nexyor do?",
-      "a": "Nexyor builds AI Voice Agents, AI workflow automations, and conversational AI systems for businesses. These agents can handle support, sales, lead qualification, appointment booking, and repetitive tasks."
+      "q": "What does dummyAI do?",
+      "a": "dummyAI builds AI Voice Agents, AI workflow automations, and conversational AI systems for businesses. These agents can handle support, sales, lead qualification, appointment booking, and repetitive tasks."
     },
     {
       "q": "Do you build AI voice agents?",
-      "a": "Yes. Nexyor specializes in AI Voice Agents that can talk to users in real time, answer questions, qualify leads, collect data, and integrate with CRMs or backend systems."
+      "a": "Yes. dummyAI specializes in AI Voice Agents that can talk to users in real time, answer questions, qualify leads, collect data, and integrate with CRMs or backend systems."
     },
     {
-      "q": "Who uses Nexyor?",
-      "a": "Businesses that want to automate customer support, sales calls, lead qualification, appointment scheduling, or internal workflows. Startups, SaaS companies, and enterprise teams use Nexyor to reduce manual workload."
+      "q": "Who uses dummyAI?",
+      "a": "Businesses that want to automate customer support, sales calls, lead qualification, appointment scheduling, or internal workflows. Startups, SaaS companies, and enterprise teams use dummyAI to reduce manual workload."
     },
     {
       "q": "What industries do you support?",
-      "a": "Nexyor supports SaaS, healthcare, education, fintech, real estate, customer service, and consulting businesses."
+      "a": "dummyAI supports SaaS, healthcare, education, fintech, real estate, customer service, and consulting businesses."
     },
     {
       "q": "How does pricing work?",
-      "a": "Nexyor pricing is based on number of conversations, automation complexity, integrations, and custom features. Entry-level pricing is designed to be startup-friendly."
+      "a": "dummyAI pricing is based on number of conversations, automation complexity, integrations, and custom features. Entry-level pricing is designed to be startup-friendly."
     },
     {
       "q": "Do you have a free trial?",
-      "a": "Yes. Nexyor typically offers a limited trial or demo to showcase how AI automation can help a business."
+      "a": "Yes. dummyAI typically offers a limited trial or demo to showcase how AI automation can help a business."
     },
     {
-      "q": "Do Nexyor agents integrate with CRMs?",
-      "a": "Yes. Nexyor supports integration with HubSpot, Salesforce, Zoho, and custom APIs."
+      "q": "Do dummyAI agents integrate with CRMs?",
+      "a": "Yes. dummyAI supports integration with HubSpot, Salesforce, Zoho, and custom APIs."
     },
     {
       "q": "Do you offer multilingual voice agents?",
-      "a": "Yes, Nexyor provides multilingual AI agents that can speak and understand multiple languages depending on model support."
+      "a": "Yes, dummyAI provides multilingual AI agents that can speak and understand multiple languages depending on model support."
     },
     {
       "q": "Is custom training available?",
-      "a": "Yes. Nexyor can train agents on your documents, product knowledge, SOPs, and workflows."
+      "a": "Yes. dummyAI can train agents on your documents, product knowledge, SOPs, and workflows."
     }
   ]
 }
