@@ -1,66 +1,51 @@
 import { Button } from '@/components/livekit/button';
+import { useState } from 'react';
 
-function ShopLogo() {
+function ImprovLogo() {
   return (
     <svg
-      width="140"
-      height="60"
-      viewBox="0 0 140 60"
+      width="160"
+      height="70"
+      viewBox="0 0 160 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="mb-6"
     >
       <defs>
-        <linearGradient id="shopGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#8B5CF6" />
-          <stop offset="100%" stopColor="#EC4899" />
+        <linearGradient id="improvGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#F59E0B" />
+          <stop offset="100%" stopColor="#EF4444" />
         </linearGradient>
       </defs>
       
-      {/* Shopping bag icon */}
-      <rect x="35" y="20" width="30" height="35" rx="2" fill="url(#shopGradient)" opacity="0.2"/>
-      <path d="M35 25 L35 55 L65 55 L65 25" stroke="url(#shopGradient)" strokeWidth="3" fill="none"/>
-      <path d="M40 25 L40 20 C40 15 45 12 50 12 C55 12 60 15 60 20 L60 25" stroke="url(#shopGradient)" strokeWidth="3" fill="none"/>
+      {/* Spotlight icon */}
+      <circle cx="40" cy="35" r="20" fill="url(#improvGradient)" opacity="0.2"/>
+      <path d="M40 15 L40 55 M25 35 L55 35" stroke="url(#improvGradient)" strokeWidth="3"/>
+      <circle cx="40" cy="35" r="18" stroke="url(#improvGradient)" strokeWidth="2.5" fill="none"/>
       
       {/* Text */}
-      <text x="75" y="38" fill="url(#shopGradient)" fontSize="20" fontWeight="bold" fontFamily="Arial, sans-serif">
-        Sibs Unfiltered SHOP
+      <text x="70" y="40" fill="url(#improvGradient)" fontSize="24" fontWeight="bold" fontFamily="Arial, sans-serif">
+        Improv Spotlight
       </text>
-      <text x="75" y="52" fill="#6B7280" fontSize="10" fontFamily="Arial, sans-serif">
-        Voice Commerce
+      <text x="70" y="55" fill="#6B7280" fontSize="11" fontFamily="Arial, sans-serif">
+        AI Voice Battle
       </text>
     </svg>
   );
 }
 
-function ShoppingIcon() {
+function SpotlightIcon() {
   return (
-    <div className="w-20 h-20 mx-auto mb-6 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-20 animate-pulse"></div>
-      <div className="absolute inset-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-30"></div>
-      <svg className="relative w-20 h-20" viewBox="0 0 80 80" fill="none">
-        <circle cx="40" cy="40" r="28" stroke="url(#shopGradient)" strokeWidth="3" fill="white"/>
-        <path d="M30 35 L30 50 C30 52 32 54 34 54 L46 54 C48 54 50 52 50 50 L50 35" stroke="url(#shopGradient)" strokeWidth="2.5" fill="none"/>
-        <path d="M32 35 L32 30 C32 26 35 23 40 23 C45 23 48 26 48 30 L48 35" stroke="url(#shopGradient)" strokeWidth="2.5" fill="none"/>
-        <circle cx="35" cy="42" r="1.5" fill="url(#shopGradient)"/>
-        <circle cx="45" cy="42" r="1.5" fill="url(#shopGradient)"/>
+    <div className="w-24 h-24 mx-auto mb-6 relative">
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-red-500 rounded-full opacity-20 animate-pulse"></div>
+      <div className="absolute inset-2 bg-gradient-to-br from-amber-500 to-red-500 rounded-full opacity-30"></div>
+      <svg className="relative w-24 h-24" viewBox="0 0 96 96" fill="none">
+        <circle cx="48" cy="48" r="32" stroke="url(#improvGradient)" strokeWidth="3" fill="white"/>
+        <path d="M48 20 L48 76 M20 48 L76 48" stroke="url(#improvGradient)" strokeWidth="3.5"/>
+        <circle cx="48" cy="48" r="8" fill="url(#improvGradient)"/>
+        <path d="M40 30 L48 20 L56 30" stroke="url(#improvGradient)" strokeWidth="2" fill="none"/>
+        <path d="M40 66 L48 76 L56 66" stroke="url(#improvGradient)" strokeWidth="2" fill="none"/>
       </svg>
-    </div>
-  );
-}
-
-function FeatureCard({ icon, title, description }) {
-  return (
-    <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 hover:border-purple-500/30">
-      <div className="flex items-start gap-4">
-        <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-xl shadow-sm">
-          {icon}
-        </div>
-        <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-gray-900 text-base mb-2">{title}</h3>
-          <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
-        </div>
-      </div>
     </div>
   );
 }
@@ -75,79 +60,93 @@ export const WelcomeView = ({
   onStartCall,
   ref,
 }: React.ComponentProps<'div'> & WelcomeViewProps) => {
+  const [playerName, setPlayerName] = useState('');
+
+  const handleStart = () => {
+    if (playerName.trim()) {
+      // Store player name in sessionStorage so agent can access it
+      sessionStorage.setItem('playerName', playerName.trim());
+      
+      // Pass the name to the parent component which will send it to the agent
+      onStartCall();
+    }
+  };
+
   return (
-    <div ref={ref} className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50/30 to-pink-50/20 flex items-center justify-center p-4">
-      <section className="max-w-5xl w-full">
+    <div ref={ref} className="min-h-screen bg-gradient-to-br from-gray-50 via-amber-50/30 to-red-50/20 flex items-center justify-center p-4">
+      <section className="max-w-2xl w-full">
         {/* Trust Badge */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border-2 border-purple-500/20 shadow-sm">
-            <svg className="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border-2 border-amber-500/20 shadow-sm">
+            <svg className="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
             </svg>
-            <span className="text-gray-700 text-sm font-semibold">AI-Powered Shopping</span>
+            <span className="text-gray-700 text-sm font-semibold">AI-Powered Improv</span>
           </div>
         </div>
 
-        {/* Shop Logo */}
+        {/* Logo */}
         <div className="flex justify-center mb-6">
-          <ShopLogo />
+          <ImprovLogo />
         </div>
 
         {/* Main Content */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 md:p-12 mb-8">
           <div className="text-center mb-8">
-            <ShoppingIcon />
+            <SpotlightIcon />
             
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-              XYZ Shop
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mt-1">
-                SHOP ANYTHING, SPEND MONEY, BECAUSE YOU LIVE ONLY ONECE!!!!
+              Welcome to
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-red-600 mt-1">
+                Improv Spotlight!
               </span>
             </h1>
             
-            <p className="text-xl text-gray-700 font-semibold mb-3">
-              Shop Smarter with Voice Commerce
+            <p className="text-lg text-gray-700 font-semibold mb-3">
+              Battle the AI Host in 4 Improvised Scenes
             </p>
             
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Browse our curated collection, discover perfect products, and complete your purchase—all through natural conversation. 
-              Shopping has never been this effortless.
+            <p className="text-gray-600 max-w-xl mx-auto leading-relaxed mb-8">
+              Step into the spotlight! You'll perform 4 improv scenes with an AI host who will judge your performance, 
+              give feedback, and keep the energy high. Ready to show your skills?
             </p>
           </div>
 
-          {/* Feature Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <FeatureCard
-              icon="🛍️"
-              title="Voice Browsing"
-              description="Explore our catalog naturally by describing what you're looking for—colors, sizes, categories, and more"
-            />
-            <FeatureCard
-              icon="🎯"
-              title="Smart Recommendations"
-              description="Get personalized product suggestions based on your preferences and shopping conversation"
-            />
-            <FeatureCard
-              icon="⚡"
-              title="Instant Ordering"
-              description="Place orders seamlessly through voice commands with real-time confirmation and tracking"
-            />
-          </div>
+          {/* Join Form */}
+          <div className="max-w-md mx-auto space-y-6">
+            <div>
+              <label htmlFor="playerName" className="block text-sm font-semibold text-gray-700 mb-2">
+                Your Name (Contestant)
+              </label>
+              <input
+                id="playerName"
+                type="text"
+                value={playerName}
+                onChange={(e) => setPlayerName(e.target.value)}
+                placeholder="Enter your name..."
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-amber-500 focus:ring focus:ring-amber-200 focus:outline-none text-gray-900 placeholder-gray-400"
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter' && playerName.trim()) {
+                    handleStart();
+                  }
+                }}
+              />
+            </div>
 
-          {/* CTA Button */}
-          <div className="flex justify-center">
+            {/* CTA Button */}
             <Button 
               variant="primary" 
               size="lg" 
-              onClick={onStartCall}
-              className="w-full md:w-auto px-10 h-14 text-base font-bold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={handleStart}
+              disabled={!playerName.trim()}
+              className="w-full h-14 text-base font-bold bg-gradient-to-r from-amber-600 to-red-600 hover:from-amber-700 hover:to-red-700 disabled:from-gray-400 disabled:to-gray-400 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:cursor-not-allowed"
             >
               <span className="flex items-center justify-center gap-3">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
                   <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
                 </svg>
-                {startButtonText}
+                Start Improv Battle
               </span>
             </Button>
           </div>
@@ -156,40 +155,41 @@ export const WelcomeView = ({
         {/* How It Works */}
         <div className="bg-white rounded-xl shadow-md border border-gray-200 p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-            <span className="text-3xl">🛒</span>
-            How Voice Shopping Works
+            <span className="text-3xl">🎭</span>
+            How It Works
           </h2>
           <ol className="space-y-5 text-base text-gray-700">
             <li className="flex gap-4">
-              <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-purple-600 to-pink-600 text-white font-bold flex items-center justify-center text-sm shadow-md">1</span>
-              <span className="pt-1"><strong className="text-gray-900">Start Shopping</strong> - Click the button above to activate your voice shopping assistant</span>
+              <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-amber-600 to-red-600 text-white font-bold flex items-center justify-center text-sm shadow-md">1</span>
+              <span className="pt-1"><strong className="text-gray-900">Enter Your Name</strong> - Type your contestant name above</span>
             </li>
             <li className="flex gap-4">
-              <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-purple-600 to-pink-600 text-white font-bold flex items-center justify-center text-sm shadow-md">2</span>
-              <span className="pt-1"><strong className="text-gray-900">Browse Products</strong> - Ask about categories, colors, sizes, or describe what you're looking for</span>
+              <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-amber-600 to-red-600 text-white font-bold flex items-center justify-center text-sm shadow-md">2</span>
+              <span className="pt-1"><strong className="text-gray-900">Start the Battle</strong> - Click the button to connect with the AI host</span>
             </li>
             <li className="flex gap-4">
-              <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-purple-600 to-pink-600 text-white font-bold flex items-center justify-center text-sm shadow-md">3</span>
-              <span className="pt-1"><strong className="text-gray-900">Get Recommendations</strong> - Receive personalized suggestions with prices and details</span>
+              <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-amber-600 to-red-600 text-white font-bold flex items-center justify-center text-sm shadow-md">3</span>
+              <span className="pt-1"><strong className="text-gray-900">Perform Scenes</strong> - The host will give you 4 scenarios. Act them out and say "End scene" when done</span>
             </li>
             <li className="flex gap-4">
-              <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-purple-600 to-pink-600 text-white font-bold flex items-center justify-center text-sm shadow-md">4</span>
-              <span className="pt-1"><strong className="text-gray-900">Complete Purchase</strong> - Place your order by voice and receive instant confirmation with order details</span>
+              <span className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-amber-600 to-red-600 text-white font-bold flex items-center justify-center text-sm shadow-md">4</span>
+              <span className="pt-1"><strong className="text-gray-900">Get Feedback</strong> - Receive instant reactions and tips after each performance</span>
             </li>
           </ol>
         </div>
 
-        {/* Shopping Notice */}
-        <div className="bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-purple-600 rounded-r-lg p-6 mb-8">
+        {/* Game Info Notice */}
+        <div className="bg-gradient-to-r from-amber-50 to-red-50 border-l-4 border-amber-600 rounded-r-lg p-6 mb-8">
           <div className="flex gap-4">
-            <svg className="w-6 h-6 text-purple-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
             </svg>
             <div>
-              <h3 className="font-bold text-purple-900 mb-2">Shopping Experience Note</h3>
-              <p className="text-sm text-purple-800 leading-relaxed">
-                This is a demonstration of <strong>Agentic Commerce Protocol (ACP)</strong> voice shopping. 
-                Browse our catalog, place orders, and experience the future of conversational commerce. All transactions are simulated for demo purposes.
+              <h3 className="font-bold text-amber-900 mb-2">Game Format</h3>
+              <p className="text-sm text-amber-800 leading-relaxed">
+                You'll perform <strong>4 improv scenes</strong>. The AI host will set up each scenario, 
+                watch your performance, and give you constructive feedback. Be creative, have fun, 
+                and don't be afraid to take risks!
               </p>
             </div>
           </div>
@@ -199,8 +199,8 @@ export const WelcomeView = ({
         <div className="text-center space-y-3">
           <p className="text-sm text-gray-600 font-medium">
             Powered by{' '}
-            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-              Voice AI Commerce
+            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-red-600">
+              Voice AI Technology
             </span>
             {' '}×{' '}
             <span className="font-bold text-gray-700">
@@ -213,25 +213,20 @@ export const WelcomeView = ({
               target="_blank"
               rel="noopener noreferrer"
               href="https://docs.livekit.io/agents/start/voice-ai/"
-              className="text-purple-600 hover:text-purple-700 font-semibold underline underline-offset-2"
+              className="text-amber-600 hover:text-amber-700 font-semibold underline underline-offset-2"
             >
               Technical Documentation
             </a>
           </p>
           <div className="flex items-center justify-center gap-3 text-xs text-gray-500 pt-2">
-            <span className="flex items-center gap-1">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
-              </svg>
-              ACP-Inspired
-            </span>
+            <span>🎭 AI Improv</span>
             <span>•</span>
-            <span>Demo Environment</span>
+            <span>Live Voice Interaction</span>
             <span>•</span>
             <span>#10DaysofAIVoiceAgents</span>
           </div>
           <p className="text-xs text-gray-400 pt-2">
-            Day 9: E-commerce Voice Agent | Demo Application for Educational Purposes
+            Day X: Improv Spotlight | Educational Demo Application
           </p>
         </div>
       </section>

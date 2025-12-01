@@ -1,0 +1,148 @@
+{
+  "show_name": "Improv Battle – English Edition",
+  "tagline": "Speak, Act, Laugh!",
+  "description": "A fast-paced improv game where players perform unpredictable and hilarious scenarios.",
+  "host_language": "english",
+  "scenarios": [
+    {
+      "id": "scenario-001",
+      "title": "The Time-Lost Librarian",
+      "scenario": "You’re a librarian who accidentally opened a time portal inside an old encyclopedia. Historical figures keep walking into your library, demanding their missing books. You must organize the chaos before the portal collapses.",
+      "difficulty": "hard",
+      "category": "horror"
+    },
+    {
+      "id": "scenario-002",
+      "title": "Delivery Drone Disaster",
+      "scenario": "You manage a futuristic delivery company where drones deliver food. Today, all drones malfunctioned and swapped addresses. Angry customers are calling—explain what happened while pretending everything is perfectly normal.",
+      "difficulty": "medium",
+      "category": "comedy"
+    },
+    {
+      "id": "scenario-003",
+      "title": "The Haunted Museum Announcement",
+      "scenario": "You’re the spokesperson of a museum where ancient statues began whispering at night. A press conference is happening right now. Convince the media that everything is under control… even though the statues keep interrupting.",
+      "difficulty": "hard",
+      "category": "horror_mystery"
+    },
+    {
+      "id": "scenario-004",
+      "title": "Chef of the Century… Maybe",
+      "scenario": "You’re a celebrity chef who accidentally served a dish made entirely from decorative plastic fruits. Critics are coming for a tasting session in five minutes. Explain the recipe in a confident, masterchef manner.",
+      "difficulty": "medium",
+      "category": "comedy"
+    },
+    {
+      "id": "scenario-005",
+      "title": "Knight of the Clumsy Order",
+      "scenario": "You’re a medieval knight famous not for bravery, but for unbelievable clumsiness. Your sword flies out of your hand, your armor squeaks, and the king wants a heroic speech. Try to convince everyone you’re battle-ready.",
+      "difficulty": "hard",
+      "category": "drama"
+    },
+    {
+      "id": "scenario-006",
+      "title": "Wedding Planner Mayhem",
+      "scenario": "As a world-class wedding planner, you just discovered that the wedding schedule is printed backwards—and the ceremony already happened without anyone realizing. Calmly explain to the families what just occurred.",
+      "difficulty": "hard",
+      "category": "comedy_chaos"
+    },
+    {
+      "id": "scenario-007",
+      "title": "The Detective’s Family Dilemma",
+      "scenario": "You’re a strict detective whose child has been caught organizing a neighborhood-wide prank involving glitter bombs. Everyone finds it hilarious except you. Maintain authority… while trying not to laugh.",
+      "difficulty": "medium",
+      "category": "drama_comedy"
+    },
+    {
+      "id": "scenario-008",
+      "title": "The Spirit of the Lighthouse",
+      "scenario": "A ghost appears at your lighthouse, claiming the beacon has been shining at the wrong angle for decades. You must calm the townspeople and negotiate with the ghost about the 'correct' lighting direction.",
+      "difficulty": "hard",
+      "category": "horror_family"
+    },
+    {
+      "id": "scenario-009",
+      "title": "Secret-Agent Grandma",
+      "scenario": "You’ve just learned your sweet grandmother is an elite undercover spy who receives coded instructions while knitting. You can’t reveal her secret, but you must protect the family from danger without telling the truth.",
+      "difficulty": "hard",
+      "category": "mystery_drama"
+    },
+    {
+      "id": "scenario-010",
+      "title": "The Energy Drink Conspiracy",
+      "scenario": "You run a tiny café whose drinks accidentally became incredibly energizing due to a mystery ingredient. A journalist wants to investigate. Dodge all their questions while serving customers with a smile.",
+      "difficulty": "medium",
+      "category": "mystery_comedy"
+    },
+    {
+      "id": "scenario-011",
+      "title": "The Cat Who Stole the Crown",
+      "scenario": "You’re a royal caretaker, and the kingdom's ceremonial crown has gone missing. Security footage shows a random street cat dragging it away. Now you must explain this to the council without sounding insane.",
+      "difficulty": "medium",
+      "category": "comedy_drama"
+    },
+    {
+      "id": "scenario-012",
+      "title": "Night Watch Mystery",
+      "scenario": "You’re a night guard who noticed a shadow entering a restricted building but never coming out. Everyone thinks you’re overreacting. You must explain the situation and convince them to investigate.",
+      "difficulty": "hard",
+      "category": "mystery_horror"
+    },
+    {
+      "id": "scenario-013",
+      "title": "The Pizza Rivalry",
+      "scenario": "You own a famous pizza shop. A new competitor next door claims their pizza is superior. You challenge them to a dramatic 'Pizza Duel' and now must hype it up like a commentator.",
+      "difficulty": "medium",
+      "category": "comedy"
+    },
+    {
+      "id": "scenario-014",
+      "title": "Monster Hunter… Who’s the Monster?",
+      "scenario": "You hunt monsters for a living. However, today you discovered that YOU yourself are slowly turning into the very creature you hunt. You must hide the truth while leading a team to catch another monster.",
+      "difficulty": "hard",
+      "category": "horror_drama"
+    },
+    {
+      "id": "scenario-015",
+      "title": "Influencer Gone Wrong",
+      "scenario": "You’re a lifestyle influencer who’s been faking luxury content with clever editing. A fan spotted the truth and is about to expose you. Give a heartfelt speech to save your image without admitting anything directly.",
+      "difficulty": "medium",
+      "category": "comedy_fraud"
+    },
+    {
+      "id": "scenario-016",
+      "title": "The Pirate Landlord",
+      "scenario": "You’re a retired pirate who buried treasure centuries ago—but now an apartment building stands on top of it. As the landlord, you must convince a confused tenant that you need to dig up their living room.",
+      "difficulty": "hard",
+      "category": "comedy_fantasy"
+    },
+    {
+      "id": "scenario-017",
+      "title": "The Future Visitor",
+      "scenario": "You’re from the year 2400 and must explain a smartphone to someone from the 1600s who thinks it’s a cursed glowing stone. Calm their fear and convince them it’s harmless.",
+      "difficulty": "hard",
+      "category": "comedy_fantasy"
+    },
+    {
+      "id": "scenario-018",
+      "title": "Runaway Meal",
+      "scenario": "You’re a restaurant server. During cooking, a bizarre kitchen accident launched a customer’s dish out of the window. Now you must explain why their meal ‘escaped’ and offer an outrageous alternative.",
+      "difficulty": "medium",
+      "category": "comedy"
+    },
+    {
+      "id": "scenario-019",
+      "title": "The Cursed Purchase",
+      "scenario": "You’re returning an obviously cursed object to a shop. Lights flicker, it whispers your name, and sometimes levitates. But the shopkeeper insists it’s 'perfectly fine.' Convince them it needs to be taken back immediately.",
+      "difficulty": "medium",
+      "category": "horror_comedy"
+    },
+    {
+      "id": "scenario-020",
+      "title": "Hero Support Group",
+      "scenario": "You’re a secret superhero attending a support group for stressed professionals. During your introduction, you accidentally reveal a major classified detail. Now you must talk your way out of it before anyone realizes.",
+      "difficulty": "hard",
+      "category": "comedy_drama"
+    }
+  ]
+}

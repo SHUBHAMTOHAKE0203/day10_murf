@@ -44,6 +44,13 @@ export function useRoom(appConfig: AppConfig) {
           window.location.origin
         );
 
+        // CRITICAL: Get player name from sessionStorage
+        const playerName = typeof window !== 'undefined' 
+          ? sessionStorage.getItem('playerName') || 'Player'
+          : 'Player';
+
+        console.log('🎭 Sending player name to API:', playerName);
+
         try {
           const res = await fetch(url.toString(), {
             method: 'POST',
@@ -52,6 +59,7 @@ export function useRoom(appConfig: AppConfig) {
               'X-Sandbox-Id': appConfig.sandboxId ?? '',
             },
             body: JSON.stringify({
+              player_name: playerName, // ← CRITICAL: Send player name
               room_config: appConfig.agentName
                 ? {
                     agents: [{ agent_name: appConfig.agentName }],
@@ -59,9 +67,12 @@ export function useRoom(appConfig: AppConfig) {
                 : undefined,
             }),
           });
-          return await res.json();
+          
+          const data = await res.json();
+          console.log('✅ Received connection details:', data);
+          return data;
         } catch (error) {
-          console.error('Error fetching connection details:', error);
+          console.error('❌ Error fetching connection details:', error);
           throw new Error('Error fetching connection details!');
         }
       }),
